@@ -16,6 +16,10 @@ const config = {
 			yellow: '#FCF433',
 			white: '#FFFFFF',
 			black: '#000000'
+		},
+		fontFamily: {
+			sans: ['var(--font-sans)', 'sans-serif'],
+			serif: ['var(--font-serif)', 'serif']
 		}
 	}
 } satisfies Config;
