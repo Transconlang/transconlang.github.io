@@ -4,7 +4,7 @@
 	}
 
 	to {
-		transform: translateY(calc(-1*var(--shift)));
+		transform: translateY(calc(-1 * var(--shift)));
 	}
 }
 
@@ -13,7 +13,7 @@
 	aspect-ratio: 3 / 2;
 }
 
-.flag>.col {
+.flag > .col {
 	flex: 1;
 	animation-name: oscillate;
 	animation-duration: 500ms;
@@ -26,20 +26,20 @@
 	animation-fill-mode: backwards;
 }
 
-.flag>.col:first-child {
+.flag > .col:first-child {
 	border-top-left-radius: var(--radius);
 	border-bottom-left-radius: var(--radius);
 }
 
-.flag>.col:last-child {
+.flag > .col:last-child {
 	border-top-right-radius: var(--radius);
 	border-bottom-right-radius: var(--radius);
 }
 
-.flag>.col:not(:first-child) {
+.flag > .col:not(:first-child) {
 	border-left: none;
 }
 
-.flag>.col:not(:last-child) {
+.flag > .col:not(:last-child) {
 	border-right: none;
 }

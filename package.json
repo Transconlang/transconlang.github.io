@@ -8,7 +8,8 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
-		"pull": "cd z.langsrc && git pull && cd .."
+		"pull": "cd z.langsrc && git pull && cd ..",
+		"fmt": "prettier -w ."
 	},
 	"dependencies": {
 		"clsx": "^2.1.1",

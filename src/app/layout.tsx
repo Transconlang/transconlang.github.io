@@ -1,11 +1,18 @@
 import type { Metadata } from 'next';
-import { Inter as FontSans } from 'next/font/google';
 import './globals.css';
 import { RootUrl } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 import ThemeButton from '@/components/darkmode/themebutton';
+import { Open_Sans as FontSans, Vollkorn as FontSerif } from 'next/font/google';
 
-const fontSans = FontSans({ subsets: ['latin'], variable: '--font-sans' });
+export const fontSans = FontSans({
+	subsets: ['latin'],
+	variable: '--font-sans'
+});
+export const fontSerif = FontSerif({
+	subsets: ['latin'],
+	variable: '--font-serif'
+});
 
 export const metadata: Metadata = {
 	title: {
@@ -37,6 +44,7 @@ export default function RootLayout({
 			<body
 				className={cn(
 					'min-h-screen bg-background font-sans antialiased',
+					fontSerif.variable,
 					fontSans.variable
 				)}
 			>
