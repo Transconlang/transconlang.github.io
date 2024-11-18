@@ -1,0 +1,45 @@
+@keyframes oscillate {
+	from {
+		transform: translateY(var(--shift));
+	}
+
+	to {
+		transform: translateY(calc(-1*var(--shift)));
+	}
+}
+
+.flag {
+	display: flex;
+	aspect-ratio: 3 / 2;
+}
+
+.flag>.col {
+	flex: 1;
+	animation-name: oscillate;
+	animation-duration: 500ms;
+	animation-iteration-count: infinite;
+	/* Ping-pong between “from” and “to”: */
+	animation-direction: alternate;
+	/* Use a symmetrical timing function: */
+	animation-timing-function: ease-in-out;
+	/* Avoid an initial flicker: */
+	animation-fill-mode: backwards;
+}
+
+.flag>.col:first-child {
+	border-top-left-radius: var(--radius);
+	border-bottom-left-radius: var(--radius);
+}
+
+.flag>.col:last-child {
+	border-top-right-radius: var(--radius);
+	border-bottom-right-radius: var(--radius);
+}
+
+.flag>.col:not(:first-child) {
+	border-left: none;
+}
+
+.flag>.col:not(:last-child) {
+	border-right: none;
+}
