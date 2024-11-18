@@ -13,6 +13,8 @@
 	--full-color: var(--purple);
 	--results-color: var(--pink);
 	--search-color: var(--blue);
+
+	color: var(--text-color);
 }
 
 .dark {
@@ -20,4 +22,8 @@
 	--full-color: var(--yellow);
 	--results-color: var(--blue);
 	--search-color: var(--pink);
+}
+
+button:active {
+	border: none;
 }

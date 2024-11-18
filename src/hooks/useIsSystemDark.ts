@@ -8,7 +8,7 @@ export function useIsSystemDark(
 ) {
 	const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 	onChange && mediaQuery.addEventListener('change', onChange);
-	return { systemThemeDark: mediaQuery.matches };
+	return mediaQuery.matches;
 }
 
 /**

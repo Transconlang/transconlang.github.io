@@ -13,7 +13,9 @@ const config = {
 			pink: '#F4A9B8',
 			blue: '#5CCEFA',
 			purple: '#9C59D1',
-			yellow: '#FCF433'
+			yellow: '#FCF433',
+			white: '#FFFFFF',
+			black: '#000000'
 		}
 	}
 } satisfies Config;
