@@ -28,9 +28,9 @@ export const metadata: Metadata = {
 		title: 'Kumilinwa',
 		description: 'The official Kumilinwa dictionary app!',
 		siteName: 'Kumilinwa',
-		images: [{ url: `${RootUrl}/og-image.png` }]
+		images: [{ url: `${RootUrl}/flag.png` }]
 	},
-	icons: [`${RootUrl}/flag.png`]
+	icons: [`${RootUrl}/icons/192x192.png`]
 };
 
 export default function RootLayout({
