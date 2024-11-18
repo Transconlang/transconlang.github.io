@@ -2,12 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
-	--pink: #F4A9B8;
-	--blue: #5CCEFA;
-	--purple: #9C59D1;
-	--yellow: #FCF433;
+	--pink: #f4a9b8;
+	--blue: #5ccefa;
+	--purple: #9c59d1;
+	--yellow: #fcf433;
 
 	--text-color: black;
 	--full-color: var(--purple);
