@@ -3,15 +3,14 @@ import './globals.css';
 import { RootUrl } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 import { Open_Sans as FontSans, Vollkorn as FontSerif } from 'next/font/google';
-import Image from 'next/image';
 import Link from '@/components/misc/link';
 import { Home, Search } from 'lucide-react';
 
-export const fontSans = FontSans({
+const fontSans = FontSans({
 	subsets: ['latin'],
 	variable: '--font-sans'
 });
-export const fontSerif = FontSerif({
+const fontSerif = FontSerif({
 	subsets: ['latin'],
 	variable: '--font-serif'
 });
