@@ -6,7 +6,8 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
-		"fmt": "prettier -w ."
+		"fmt": "prettier -w .",
+		"up": "ncu -u && npm i"
 	},
 	"dependencies": {
 		"@serwist/next": "^9.0.11",

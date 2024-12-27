@@ -30,7 +30,7 @@ export default function Flag({
 
 	return (
 		<div
-			className='flag'
+			className="flag"
 			style={{
 				width: width + 'px'
 			}}
@@ -38,7 +38,7 @@ export default function Flag({
 			{range(cols).map(index => (
 				<div
 					key={index}
-					className='col'
+					className="col"
 					style={
 						{
 							'--shift': ((shift / cols) * index).toString() + 'px',
