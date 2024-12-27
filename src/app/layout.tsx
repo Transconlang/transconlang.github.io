@@ -4,7 +4,7 @@ import { RootUrl } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 import { Open_Sans as FontSans, Vollkorn as FontSerif } from 'next/font/google';
 import Link from '@/components/misc/link';
-import { Home, Search } from 'lucide-react';
+import { BookOpenText, Home, Search } from 'lucide-react';
 
 const fontSans = FontSans({
 	subsets: ['latin'],
@@ -53,6 +53,12 @@ export default function RootLayout({
 				<div className='search flex flex-row justify-start gap-2 p-1 bg-pink text-white'>
 					<Link href='/'>
 						<Home />
+					</Link>
+					<Link href='/browse/'>
+						<BookOpenText />
+					</Link>
+					<Link href='/search/'>
+						<Search />
 					</Link>
 				</div>
 				{children}
