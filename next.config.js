@@ -6,7 +6,8 @@ const nextConfig = {
 	output: 'export',
 	images: {
 		unoptimized: true
-	}
+	},
+	basePath: '/dictionary-webapp'
 };
 
 export default withSerwistInit({
