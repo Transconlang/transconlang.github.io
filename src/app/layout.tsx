@@ -29,9 +29,10 @@ export const metadata: Metadata = {
 		title: 'Kumilinwa',
 		description: 'The official Kumilinwa dictionary app!',
 		siteName: 'Kumilinwa',
-		images: [{ url: `${RootUrl}/flag.png` }]
+		images: [{ url: '/flag.png', type: 'image/png' }]
 	},
-	icons: [`${RootUrl}/icons/192x192.png`]
+	icons: ['/icons/192x192.png', '/icons/512x512.png', '/icons/1000x1000.png'],
+	manifest: '/manifest.json'
 };
 
 export default function RootLayout({
