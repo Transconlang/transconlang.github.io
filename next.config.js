@@ -3,7 +3,10 @@ import withSerwistInit from '@serwist/next';
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	trailingSlash: true,
-	output: 'export'
+	output: 'export',
+	images: {
+		unoptimized: true
+	}
 };
 
 export default withSerwistInit({
