@@ -2,8 +2,10 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { RootUrl } from '@/lib/constants';
 import { cn } from '@/lib/utils';
-import ThemeButton from '@/components/darkmode/themebutton';
 import { Open_Sans as FontSans, Vollkorn as FontSerif } from 'next/font/google';
+import Image from 'next/image';
+import Link from '@/components/misc/link';
+import { Home, Search } from 'lucide-react';
 
 export const fontSans = FontSans({
 	subsets: ['latin'],
@@ -28,9 +30,9 @@ export const metadata: Metadata = {
 		title: 'Kumilinwa',
 		description: 'The official Kumilinwa dictionary app!',
 		siteName: 'Kumilinwa',
-		images: [{ url: `${RootUrl}/og-image.png` }]
+		images: [{ url: `${RootUrl}/flag.png` }]
 	},
-	icons: [`${RootUrl}/flag.png`]
+	icons: [`${RootUrl}/icons/192x192.png`]
 };
 
 export default function RootLayout({
@@ -39,7 +41,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en" suppressHydrationWarning>
+		<html lang='en' suppressHydrationWarning>
 			<head />
 			<body
 				className={cn(
@@ -47,9 +49,14 @@ export default function RootLayout({
 					fontSerif.variable,
 					fontSans.variable
 				)}
+				suppressHydrationWarning
 			>
+				<div className='search flex flex-row justify-start gap-2 p-1 bg-pink text-white'>
+					<Link href='/'>
+						<Home />
+					</Link>
+				</div>
 				{children}
-				<ThemeButton />
 			</body>
 		</html>
 	);

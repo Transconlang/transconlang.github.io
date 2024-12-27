@@ -1,6 +1,6 @@
 {
 	"compilerOptions": {
-		"lib": ["DOM", "ESNext"],
+		"lib": ["DOM", "ESNext", "WebWorker"],
 		"allowJs": true,
 		"skipLibCheck": true,
 		"strict": true,
@@ -20,14 +20,9 @@
 		"paths": {
 			"@/*": ["./src/*"]
 		},
-		"target": "ESNext"
+		"target": "ESNext",
+		"types": ["@serwist/next/typings"]
 	},
-	"include": [
-		"next-env.d.ts",
-		"**/*.ts",
-		"**/*.tsx",
-		".next/types/**/*.ts",
-		"next.config.js"
-	],
+	"include": ["**/*.ts", "**/*.tsx", "next.config.js", ".next/types/**/*.ts"],
 	"exclude": ["node_modules"]
 }
