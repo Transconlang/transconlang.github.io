@@ -11,7 +11,7 @@ export default function FullBrowserPage() {
 		fetch(`${RootUrl}/langspec/catted.json`)
 			.then(res => res.json())
 			.then(v => setFullSpec(v));
-	});
+	}, []);
 
 	return (
 		<>
