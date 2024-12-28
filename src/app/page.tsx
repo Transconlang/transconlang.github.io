@@ -1,4 +1,4 @@
-import Link from '@/components/misc/link';
+import Link from '@/components/link';
 
 export default function Home() {
 	return (

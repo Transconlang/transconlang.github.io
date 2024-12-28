@@ -1,3 +1,5 @@
+import NextLink from 'next/link';
+
 export default function Link({
 	href,
 	children,
@@ -12,12 +14,12 @@ export default function Link({
 	external?: boolean;
 }) {
 	return (
-		<a
+		<NextLink
 			href={href}
 			className={'underline hover: ' + className}
 			target={external ? (target ?? '_blank') : undefined}
 		>
 			{children}
-		</a>
+		</NextLink>
 	);
 }
