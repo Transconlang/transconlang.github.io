@@ -14,7 +14,7 @@ import {
 } from './ui/dialog';
 import { BookText } from 'lucide-react';
 import { trimWordType } from '@/lib/formatting';
-import { Label } from './ui/label';
+import MiniSearch from 'minisearch';
 
 function SearchPage() {
 	const [fullSpec, setFullSpec] = useState<FullEntry[]>([]);
@@ -23,13 +23,25 @@ function SearchPage() {
 
 	const isDeferring = searchValue !== deferredSearchValue;
 
-	const filtered = fullSpec.filter(
-		entry =>
-			entry.word.includes(deferredSearchValue) ||
-			entry.meaning?.includes(deferredSearchValue) ||
-			entry.impl?.includes(deferredSearchValue) ||
-			entry.obscurism?.includes(deferredSearchValue)
-	);
+	const MS = new MiniSearch<FullEntry>({
+		fields: ['word', 'meaning', 'impl', 'obscurism'],
+		storeFields: ['word', 'meaning', 'impl', 'obscurism', 'type', 'id'],
+		extractField: (document, fieldName) =>
+			fieldName === 'id'
+				? `${document.word}_${document.type}`
+				: (document[fieldName as keyof FullEntry] ?? ''),
+		searchOptions: {
+			boost: { word: 2, meaning: 1.25, impl: 1, obscurism: 0.5 },
+			fields: ['word', 'meaning', 'impl', 'obscurism'],
+			fuzzy: (term, _index, __number) => term.length > 3 && 0.2
+		}
+	});
+	MS.addAll(fullSpec);
+
+	const filtered =
+		deferredSearchValue.length > 0
+			? MS.search(deferredSearchValue.toLowerCase())
+			: [];
 
 	useEffect(() => {
 		fetch(`${RootUrl}/langspec/complete.json`)
@@ -49,11 +61,21 @@ function SearchPage() {
 			<hr className='h-1 bg-yellow my-4' />
 			<div>
 				{deferredSearchValue.length === 0 ? (
-					<p className='text-red text-center font-bold' style={{}}>
+					<p
+						className='text-red text-center font-bold'
+						style={{
+							filter: isDeferring ? 'blur(1px)' : 'none'
+						}}
+					>
 						Please enter a search term
 					</p>
 				) : filtered.length === 0 ? (
-					<p className='text-red text-center font-bold' style={{}}>
+					<p
+						className='text-red text-center font-bold'
+						style={{
+							filter: isDeferring ? 'blur(1px)' : 'none'
+						}}
+					>
 						No results found
 					</p>
 				) : (
@@ -62,7 +84,8 @@ function SearchPage() {
 							style={{
 								display: 'grid',
 								gridTemplateColumns: '6fr 6fr 1fr',
-								gap: '1rem'
+								gap: '1rem',
+								filter: isDeferring ? 'blur(1px)' : 'none'
 							}}
 							key={`${entry.word}_${entry.type}`}
 						>

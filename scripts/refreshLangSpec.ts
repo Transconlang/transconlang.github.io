@@ -27,4 +27,11 @@ const DestDir = join(
 );
 
 await writeFile(join(DestDir, 'catted.json'), JSON.stringify(Specs.Catted));
-await writeFile(join(DestDir, 'complete.json'), JSON.stringify(Specs.Complete));
+await writeFile(
+	join(DestDir, 'complete.json'),
+	JSON.stringify(
+		Specs.Complete.sort((a, b) =>
+			a.word.replaceAll('-', '').localeCompare(b.word.replaceAll('-', ''))
+		)
+	)
+);
