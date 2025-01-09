@@ -47,8 +47,8 @@ export const metadata: Metadata = {
 		`${RootUrl}/icons/192x192.png`,
 		`${RootUrl}/icons/512x512.png`,
 		`${RootUrl}/icons/1000x1000.png`
-	],
-	manifest: `${RootUrl}/manifest.json`
+	]
+	// manifest: `${RootUrl}/manifest.json`
 };
 
 export const viewport: Viewport = {
