@@ -19,7 +19,7 @@ import MiniSearch from 'minisearch';
 function SearchPage() {
 	const [fullSpec, setFullSpec] = useState<FullEntry[]>([]);
 	const [searchValue, setSearchValue] = useState('');
-	const deferredSearchValue = useDeferredValue(searchValue);
+	const deferredSearchValue = useDeferredValue(searchValue).toLowerCase();
 
 	const isDeferring = searchValue !== deferredSearchValue;
 
