@@ -15,5 +15,6 @@ export default withSerwistInit({
 	swSrc: 'src/app/sw.ts',
 	swDest: 'public/sw.js',
 	injectionPoint: '__SW_MANIFEST',
-	include: [/\.(css|js|ts|jsx|tsx|html|png|json)/]
+	include: [/\.(css|js|ts|jsx|tsx|html|png|json)/],
+	scope: '/dictionary-webapp/'
 })(nextConfig);
