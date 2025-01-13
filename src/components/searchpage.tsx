@@ -15,6 +15,7 @@ import {
 import { BookText } from 'lucide-react';
 import { trimWordType } from '@/lib/formatting';
 import MiniSearch from 'minisearch';
+import { ScrollArea, ScrollBar } from './ui/scroll-area';
 
 function SearchPage() {
 	const [fullSpec, setFullSpec] = useState<FullEntry[]>([]);
@@ -31,9 +32,9 @@ function SearchPage() {
 				? `${document.word}_${document.type}`
 				: (document[fieldName as keyof FullEntry] ?? ''),
 		searchOptions: {
-			boost: { word: 2, meaning: 1.25, impl: 1, obscurism: 0.5 },
+			boost: { word: 2, meaning: 1.5, impl: 1, obscurism: 2 },
 			fields: ['word', 'meaning', 'impl', 'obscurism'],
-			fuzzy: (term, _index, __number) => term.length > 3 && 0.2
+			fuzzy: 0.2
 		}
 	});
 	MS.addAll(fullSpec);
@@ -57,29 +58,30 @@ function SearchPage() {
 				placeholder='kumi'
 				value={searchValue}
 				onChange={e => setSearchValue(e.target.value)}
+				className='grow-0'
 			/>
-			<hr className='h-1 bg-yellow my-4' />
-			<div>
-				{deferredSearchValue.length === 0 ? (
-					<p
-						className='text-red text-center font-bold'
-						style={{
-							filter: isDeferring ? 'blur(1px)' : 'none'
-						}}
-					>
-						Please enter a search term
-					</p>
-				) : filtered.length === 0 ? (
-					<p
-						className='text-red text-center font-bold'
-						style={{
-							filter: isDeferring ? 'blur(1px)' : 'none'
-						}}
-					>
-						No results found
-					</p>
-				) : (
-					filtered.map(entry => (
+			<hr className='h-1 bg-yellow my-4 grow-0' />
+			{deferredSearchValue.length === 0 ? (
+				<p
+					className='text-red text-center font-bold'
+					style={{
+						filter: isDeferring ? 'blur(1px)' : 'none'
+					}}
+				>
+					Please enter a search term
+				</p>
+			) : filtered.length === 0 ? (
+				<p
+					className='text-red text-center font-bold'
+					style={{
+						filter: isDeferring ? 'blur(1px)' : 'none'
+					}}
+				>
+					No results found
+				</p>
+			) : (
+				<ScrollArea type='always'>
+					{filtered.map(entry => (
 						<div
 							style={{
 								display: 'grid',
@@ -111,9 +113,10 @@ function SearchPage() {
 								<p></p>
 							)}
 						</div>
-					))
-				)}
-			</div>
+					))}
+					<ScrollBar />
+				</ScrollArea>
+			)}
 		</>
 	);
 }
