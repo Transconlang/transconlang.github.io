@@ -3,7 +3,8 @@
 	"short_name": "Kumilinwa",
 	"description": "!'te tobacun Kumilinwa \"official\"",
 	"start_url": "/",
-	"display_override": ["minimal-ui", "standalone"],
+	"display": "standalone",
+	"display_override": ["window-controls-overlay"],
 	"background_color": "#5CCEFA",
 	"theme_color": "#F4A9B8",
 	"icons": [
