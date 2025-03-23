@@ -13,6 +13,5 @@ export default withSerwistInit({
 	cacheOnNavigation: true,
 	swSrc: 'src/app/sw.ts',
 	swDest: 'public/sw.js',
-	include: [/\.(css|js|ts|jsx|tsx|html|png|json)/],
-	scope: '/dictionary-webapp/'
+	include: [/\.(css|js|ts|jsx|tsx|html|png|svg|jpg|jpeg|webp|json)/]
 })(nextConfig);
