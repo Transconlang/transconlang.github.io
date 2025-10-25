@@ -65,7 +65,7 @@ export default function FullBrowserPage() {
 											<p className='text-base font-bold font-serif mb-2'>
 												{entry.word}
 											</p>
-											<p className='overflow-scroll'>{entry.meaning}</p>
+											<p className='overflow-x-scroll'>{entry.meaning}</p>
 											{entry.impl || entry.obscurism ? (
 												<Dialog>
 													<DialogTrigger asChild>
