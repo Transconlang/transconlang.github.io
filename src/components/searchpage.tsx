@@ -94,7 +94,7 @@ function SearchPage() {
 							<h4 className='text-base font-bold font-serif mb-2'>
 								{entry.word} ({`${trimWordType(entry.type)}.`})
 							</h4>
-							<p className='overflow-scroll'>{entry.meaning}</p>
+							<p className='overflow-x-scroll'>{entry.meaning}</p>
 							{entry.impl || entry.obscurism ? (
 								<Dialog>
 									<DialogTrigger asChild>
