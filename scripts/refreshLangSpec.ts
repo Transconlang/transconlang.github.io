@@ -5,9 +5,9 @@ import { writeFile } from 'fs/promises';
 
 const URLs = {
 	Catted:
-		'https://raw.githubusercontent.com/Transconlang/translang/refs/heads/main/rawspec/0-catted.json',
+		'https://raw.githubusercontent.com/Transconlang/transconlang.github.io/refs/heads/main/rawspec/0-catted.json',
 	Complete:
-		'https://raw.githubusercontent.com/Transconlang/translang/refs/heads/main/rawspec/0-complete.json'
+		'https://raw.githubusercontent.com/Transconlang/transconlang.github.io/refs/heads/main/rawspec/0-complete.json'
 };
 
 const Specs = {
