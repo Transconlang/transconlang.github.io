@@ -10,6 +10,8 @@ const URLs = {
 		'https://raw.githubusercontent.com/Transconlang/translang/refs/heads/main/rawspec/0-complete.json'
 };
 
+console.log('Fetching language specification...');
+
 const Specs = {
 	Catted: await fetch(URLs.Catted).then(
 		res => res.json() as Promise<BigSection[]>
@@ -18,6 +20,8 @@ const Specs = {
 		res => res.json() as Promise<FullEntry[]>
 	)
 };
+
+console.log('Writing data...');
 
 const DestDir = join(
 	dirname(fileURLToPath(import.meta.url)),
@@ -35,3 +39,6 @@ await writeFile(
 		)
 	)
 );
+
+console.log('Done.');
+
