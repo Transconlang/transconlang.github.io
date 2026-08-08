@@ -41,4 +41,3 @@ await writeFile(
 );
 
 console.log('Done.');
-
