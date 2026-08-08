@@ -1,4 +1,4 @@
-import FullBrowserPage from '@/components/fullbrowserpage';
+import FullBrowserPage from '../../components/fullbrowserpage';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {

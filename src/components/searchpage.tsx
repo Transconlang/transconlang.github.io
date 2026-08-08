@@ -1,7 +1,7 @@
 'use client';
 
-import { RootUrl } from '@/lib/constants';
-import { FullEntry } from '@/lib/types';
+import { RootUrl } from '../lib/constants';
+import { FullEntry } from '../lib/types';
 import { useState, useEffect, memo, useDeferredValue } from 'react';
 import { Input } from './ui/input';
 import {
@@ -13,7 +13,7 @@ import {
 	DialogTrigger
 } from './ui/dialog';
 import { BookText } from 'lucide-react';
-import { trimWordType } from '@/lib/formatting';
+import { trimWordType } from '../lib/formatting';
 import MiniSearch from 'minisearch';
 import { ScrollArea, ScrollBar } from './ui/scroll-area';
 

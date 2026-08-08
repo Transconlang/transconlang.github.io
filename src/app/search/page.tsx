@@ -1,4 +1,4 @@
-import SearchPage from '@/components/searchpage';
+import SearchPage from '../../components/searchpage';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {

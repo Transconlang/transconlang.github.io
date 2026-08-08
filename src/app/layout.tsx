@@ -1,9 +1,9 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
-import { RootUrl } from '@/lib/constants';
-import { cn } from '@/lib/utils';
+import { RootUrl } from '../lib/constants';
+import { cn } from '../lib/utils';
 import { Open_Sans as FontSans, Vollkorn as FontSerif } from 'next/font/google';
-import Link from '@/components/link';
+import Link from '../components/link';
 import { BookOpenText, Home, Search } from 'lucide-react';
 
 const fontSans = FontSans({

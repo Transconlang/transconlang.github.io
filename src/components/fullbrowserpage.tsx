@@ -1,6 +1,6 @@
 'use client';
 
-import { RootUrl } from '@/lib/constants';
+import { RootUrl } from '../lib/constants';
 import { BigSection, FullEntry } from '@/lib/types';
 import { useState, useEffect } from 'react';
 import { BookText } from 'lucide-react';
